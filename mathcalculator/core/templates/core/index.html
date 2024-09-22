@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEM Math Calculator</title>
+    <title>Advanced STEM Math Calculator</title>
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <script src="{% static 'core/js/plotly-latest.min.js' %}"></script> <!-- Include Plotly.js for graphing -->
 </head>
 <body>
     <div class="calculator">
-        <h1>STEM Math Calculator</h1>
+        <h1>Advanced STEM Math Calculator</h1>
         <input type="text" id="display" disabled>
         <div class="buttons">
             <button onclick="clearDisplay()">C</button>
@@ -19,26 +20,38 @@
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
             <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('*')" class='button'>*</button>
             <button onclick="appendToDisplay('4')">4</button>
             <button onclick="appendToDisplay('5')">5</button>
             <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('-')" class='button'>-</button>
             <button onclick="appendToDisplay('1')">1</button>
             <button onclick="appendToDisplay('2')">2</button>
             <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('+')" class='button'>+</button>
             <button onclick="appendToDisplay('0')">0</button>
             <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="calculate('sqrt')">√</button>
-            <button onclick="calculate('pow')">x²</button>
-            <button onclick="calculate('log')">log</button>
-            <button onclick="calculate('sin')">sin</button>
-            <button onclick="calculate('cos')">cos</button>
-            <button onclick="calculate('tan')">tan</button>
+            <button onclick="calculate()" style='background-color:green'>=</button>
+            <button onclick="calculate('sqrt')" class='button'>√</button>
+            <button onclick="calculate('pow')" class='button'>x²</button>
+            <button onclick="calculate('log')" class='button'>log</button>
+            <button onclick="calculate('exp')" class='button'>e^x</button>
+            <button onclick="calculate('factorial')" class='button'>x!</button>
+            <button onclick="appendToDisplay(Math.PI)" class='button'>π</button>
+            <button onclick="appendToDisplay(Math.E)" class='button'>e</button>
+            <button onclick="calculate('sin')" class='button'>sin</button>
+            <button onclick="calculate('cos')" class='button'>cos</button>
+            <button onclick="calculate('tan')" class='button'>tan</button>
         </div>
     </div>
+
+    <div id="graph" class="graph">
+        <h2>Graph Plotting</h2>
+        <input type="text" id="function-input" placeholder="Enter a function (e.g. x^2, sin(x))">
+        <button onclick="plotGraph()" class='button'>Plot</button>
+        <div id="plot"></div>
+    </div>
+
     <script src="{% static 'core/js/script.js' %}"></script>
 </body>
 </html>

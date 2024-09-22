@@ -1,9 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
     background-color: #f4f4f9;
 }
 
@@ -13,18 +12,14 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
     margin-bottom: 20px;
-    color: #333;
 }
 
 #display {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     font-size: 24px;
-    border: 2px solid #ddd;
+    border: 2px solid #000;
     border-radius: 5px;
     margin-bottom: 10px;
     text-align: right;
@@ -48,4 +43,28 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.graph {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#function-input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#plot {
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+}
+
+.button{
+    background-color: #286a73;
+}
+.button:hover{
+    background-color:  #11383d;
 }
